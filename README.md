@@ -39,3 +39,19 @@ Quickstart
 5. Add {% load pageviewsplus_tags %} to templates.
 
 6. Insert {% pageviewsplus %} or {% pageviewsplus_url request.path %} to templates.
+
+Configuration
+=============
+
+Your ``settings.py`` file contains the folling settings.
+
+``IGNORE_USER_AGENTS``: this is used to define what user agents to ignore.  By default it will have the following values. These can be ignored by editing directly or adding a customized version to the main project ``settings.py``.
+
+    [
+    "Teoma", "alexa", "froogle", "Gigabot", "inktomi", "looksmart", "URL_Spider_SQL", "Firefly",
+    "NationalDirectory", "Ask Jeeves", "TECNOSEEK", "InfoSeek", "WebFindBot", "girafabot", "crawler",
+    "www.galaxy.com", "Googlebot", "Googlebot/2.1", "Google", "Webmaster", "Scooter", "James Bond",
+    "Slurp", "msnbot", "appie", "FAST", "WebBug", "Spade", "ZyBorg", "rabaz", "Baiduspider",
+    "Feedfetcher-Google", "TechnoratiSnoop", "Rankivabot", "Mediapartners-Google", "Sogou web spider",
+    "WebAlta Crawler", "MJ12bot", "Yandex/", "YaDirectBot", "StackRambler", "DotBot", "dotbot"
+]
