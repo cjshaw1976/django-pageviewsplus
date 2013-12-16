@@ -27,7 +27,7 @@ Quickstart
 ```python
     MIDDLEWARE_CLASSES = (
         "...",
-        "pageviewsplus.middleware.PageViewsMiddleware"
+        "pageviewsplus.middleware.PageViewsPlusMiddleware"
     )
 ```
 
