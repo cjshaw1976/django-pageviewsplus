@@ -45,7 +45,7 @@ Configuration
 
 Your ``settings.py`` file contains the folling settings.
 
-``IGNORE_USER_AGENTS``: this is used to define what user agents to ignore.  By default it will have the following values.
+* ``IGNORE_USER_AGENTS``: this is used to define what user agents to ignore.  By default it will have the following values.
 
     [
     "Teoma", "alexa", "froogle", "Gigabot", "inktomi", "looksmart", "URL_Spider_SQL", "Firefly",
