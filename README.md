@@ -12,7 +12,7 @@ Quickstart
 
 1. Install from github or clone the repository:
 ```bash
-    pip install git+git://github.com/renyi/django-pageviews.git
+    pip install git+git://github.com/shadowym/django-pageviewsplus.git
 ```
 
 2. Add 'pageviews' to INSTALLED_APPS.
@@ -38,4 +38,4 @@ Quickstart
 
 5. Add {% load pageviewsplus_tags %} to templates.
 
-6. Insert {% pageviews %} or {% pageviews_url request.path %} to templates.
+6. Insert {% pageviewsplus %} or {% pageviewsplus_url request.path %} to templates.
