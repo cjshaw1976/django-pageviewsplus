@@ -1,8 +1,8 @@
 from django.conf import settings
 
-BOTS_USER_AGENTS = getattr(
+IGNORE_USER_AGENTS = getattr(
         settings,
-        'BOTS_USER_AGENTS',
+        'IGNORE_USER_AGENTS',
         [
                 "Teoma", "alexa", "froogle", "Gigabot", "inktomi", "looksmart", "URL_Spider_SQL", "Firefly",
                 "NationalDirectory", "Ask Jeeves", "TECNOSEEK", "InfoSeek", "WebFindBot", "girafabot", "crawler",
