@@ -1,6 +1,10 @@
 Introduction
 ============
-A very simple middleware based page view counter. It's sole purpose is to increment page views.
+Pageviews is a very simple middleware based page view counter. It's sole purpose is to increment page views.
+
+PageviewsPlus adds the ability to filter out search engine bots.
+
+
 
 
 Quickstart
