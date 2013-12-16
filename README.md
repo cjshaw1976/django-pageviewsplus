@@ -19,7 +19,7 @@ Quickstart
 ```python
     INSTALLED_APPS = (
         "...",
-        "pageviews",
+        "pageviewsplus",
     )
 ```
 
@@ -27,7 +27,7 @@ Quickstart
 ```python
     MIDDLEWARE_CLASSES = (
         "...",
-        "pageviews.middleware.PageViewsMiddleware"
+        "pageviewsplus.middleware.PageViewsMiddleware"
     )
 ```
 
@@ -36,6 +36,6 @@ Quickstart
     python manage.py migrate
 ```
 
-5. Add {% load pageviews_tags %} to templates.
+5. Add {% load pageviewsplus_tags %} to templates.
 
 6. Insert {% pageviews %} or {% pageviews_url request.path %} to templates.
