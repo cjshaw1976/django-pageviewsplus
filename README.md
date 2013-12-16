@@ -23,7 +23,7 @@ Quickstart
     )
 ```
 
-3. Add 'pageviews.middleware.PageViewsMiddleware' to MIDDLEWARE_CLASSES.
+3. Add 'pageviewsplus.middleware.PageViewsPlusMiddleware' to MIDDLEWARE_CLASSES.
 ```python
     MIDDLEWARE_CLASSES = (
         "...",
