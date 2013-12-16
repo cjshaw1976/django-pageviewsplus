@@ -1,1 +1,1 @@
-1. Blacklist url
+1. Ignore url
