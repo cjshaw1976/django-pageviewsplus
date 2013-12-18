@@ -8,7 +8,7 @@ class PageViewsPlusMiddleware:
         if 'HTTP_USER_AGENT' in request.META and is_ignored(request):
             return None
         # To test if user agents in your ignore list are not counted try change the user agent in your browser.
-        # The ability is built into Chrome in Developer tools.  Other browsers may need add ons.  
+        # The ability is built into Google Chrome in developer tools.  Other browsers may need add ons.  
 
         else:
             hit, hit_created = HitCount.objects.get_or_create(url=request.path)
