@@ -9,23 +9,23 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'HitCount'
-        db.create_table(u'pageviews_hitcount', (
+        db.create_table(u'pageviewsplus_hitcount', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
             ('modified', self.gf('django.db.models.fields.DateTimeField')(auto_now=True, blank=True)),
             ('url', self.gf('django.db.models.fields.CharField')(max_length=2000)),
             ('hits', self.gf('django.db.models.fields.PositiveIntegerField')(default=0)),
         ))
-        db.send_create_signal(u'pageviews', ['HitCount'])
+        db.send_create_signal(u'pageviewsplus', ['HitCount'])
 
 
     def backwards(self, orm):
         # Deleting model 'HitCount'
-        db.delete_table(u'pageviews_hitcount')
+        db.delete_table(u'pageviewsplus_hitcount')
 
 
     models = {
-        u'pageviews.hitcount': {
+        u'pageviewsplus.hitcount': {
             'Meta': {'ordering': "('-created', '-modified')", 'object_name': 'HitCount'},
             'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'hits': ('django.db.models.fields.PositiveIntegerField', [], {'default': '0'}),
@@ -35,4 +35,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['pageviews']
+    complete_apps = ['pageviewsplus']
