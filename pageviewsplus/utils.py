@@ -15,8 +15,9 @@ def is_ignored(request, ua_pattern=""):
     ## for ua_pattern in settings.IGNORE_USER_AGENTS:
     ##    if re.search(ua_pattern, request.META.get("HTTP_USER_AGENT",""):
     ##        return True
-    ##
-    ## return False
+    ##    else:
+    ##        return False    
+    #
 
     return any(re.search(ua_pattern, request.META.get("HTTP_USER_AGENT","")) 
         for ua_pattern in settings.IGNORE_USER_AGENTS)
