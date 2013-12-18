@@ -45,7 +45,7 @@ Configuration
 
 Your ``settings.py`` file contains the folling settings.
 
-* ``IGNORE_USER_AGENTS``: this is used to define what user agents to ignore.  
+* ``IGNORE_USER_AGENTS``: this is used to define what user agents to ignore. The list is case sensitive. 
 
 By default, ``IGNORE_USER_AGENTS`` will have the following values.
 
