@@ -11,7 +11,7 @@ class HitCount(models.Model):
 		hits = models.PositiveIntegerField(_('Hits'), default=0)
 
 	except ObjectDoesNotExist:
-		print("problem with an expected db column(s)")
+		print("problem with pageviewsplus hitcount table")
 
 
 	class Meta:

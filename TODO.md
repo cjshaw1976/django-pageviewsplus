@@ -1,1 +1,1 @@
-1. Ignore url
+1. ignore user by IP?
