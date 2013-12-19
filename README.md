@@ -43,7 +43,7 @@ Quickstart
 Configuration
 =============
 
-Your ``settings.py`` file contains the folling settings.
+The ``settings.py`` file contains the following settings.
 
 * ``IGNORED_URLS``: Defines what urls to ignore.  A default list is provided. Can be overridded in project settings.py file
 * ``IGNORED_USER_AGENTS``: Case sensitive list defines what user agents to ignore. Default list can be overridden in project settings.py
