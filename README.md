@@ -2,7 +2,7 @@ Introduction
 ============
 Pageviews is a very simple middleware based page view counter. It's sole purpose is to increment page views.
 
-PageviewsPlus adds the ability to ignore a list of user agents such as search engine bots.
+PageviewsPlus adds the ability to ignore a list of urls and user agents such as search engine bots.  A default list is included for both.
 
 
 

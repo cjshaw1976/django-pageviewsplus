@@ -36,7 +36,6 @@ class PageViewsPlusMiddleware:
         # To test if user agents in your ignore list are not counted try change the user agent in your browser.
         # The ability is built into Chrome in Developer tools.  Other browsers may need add ons.
         # Search engine bot user agent strings can be obtained from websites such as useragentstring.com
-
         elif 'HTTP_USER_AGENT' in request.META and settings.IGNORED_USER_AGENTS and self.is_ignored_ua(request):
             return None
         else:
