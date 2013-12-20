@@ -1,7 +1,7 @@
 from django.conf import settings
 
 # Attributes in this settings.py file can be edited directly or overridden by adding to main project settings.py
-# To add to main project settings.py add as standard django tuple.
+# To add to main project settings.py add as standard django list.
 # example
 ## IGNORED_USER_AGENTS = ['agent1', 'agent2', 'etc']
 ## IGNORED_URLS = ['/url1', '/url2', '/url/etc']
