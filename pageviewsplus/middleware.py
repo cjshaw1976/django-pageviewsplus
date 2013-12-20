@@ -8,7 +8,7 @@ class PageViewsPlusMiddleware:
 
     def is_ignored_url(self, request, url_pattern=''):
 
-        # Although less readable the following list comprehension is probably faster than separate loop lines.
+        # Although less readable the following generator expression is probably faster than separate loop lines.
         #
         # The equivalent loops lines should read something like:
         ##
