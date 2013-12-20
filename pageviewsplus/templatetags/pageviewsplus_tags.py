@@ -7,9 +7,9 @@ register = template.Library()
 
 @register.simple_tag(takes_context=True)
 def pageviewsplus(context):
-    """
+    '''
     Displays pageviews of the current page.
-    """
+    '''
     try:
         request = context['request']
         hit = HitCount.objects.get(url=request.path)
@@ -20,9 +20,9 @@ def pageviewsplus(context):
 
 @register.simple_tag
 def pageviewsplus_url(path):
-    """
+    '''
     Displays pageviews by url. Useful for list views.
-    """
+    '''
     try:
         hit = HitCount.objects.get(url=path)
         return hit.hits
