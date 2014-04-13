@@ -15,7 +15,7 @@ Quickstart
     pip install git+git://github.com/shadowym/django-pageviewsplus.git
 ```
 
-2. Add 'pageviews' to INSTALLED_APPS.
+2. Add 'pageviewsplus' to INSTALLED_APPS.
 ```python
     INSTALLED_APPS = (
         '...',
