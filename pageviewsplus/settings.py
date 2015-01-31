@@ -28,5 +28,5 @@ IGNORED_USER_AGENTS = getattr(
 # IGNORED_URLS
 # Include the leading '/' and include the entire url for subdomains.
 # So to ignore '/blog/subdomain/subsubdomain' use that entire string.
-
+#
 IGNORED_URLS = getattr(settings, 'IGNORED_URLS', ['/sitemap.xml', '/robots.txt', '/favicon.ico', '/static', '/admin'])
