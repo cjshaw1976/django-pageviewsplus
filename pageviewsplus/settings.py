@@ -8,7 +8,9 @@ from django.conf import settings
 #To disable either feature use:
 ##IGNORED_USER_AGENTS = []
 ##IGNORED_URLS = []
-
+#
+# User agent strings can be obtained from websites such as useragentstring.com
+#
 IGNORED_USER_AGENTS = getattr(
         settings,
         'IGNORED_USER_AGENTS',
