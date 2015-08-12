@@ -36,7 +36,7 @@ Quickstart
     python manage.py migrate
 ```
 
-5. Add {% load pageviewsplus_tags %} to templates.
+5. Optionally {% load pageviewsplus_tags %} to templates.
 
 6. Optionally insert {% pageviewsplus %} or {% pageviewsplus_url request.path %} to templates.
 
