@@ -25,10 +25,10 @@ class PageViewsPlusMiddleware(object):
         if response.status_code == 404:
             return response
 
-
         # Do not count hits in our IGNORED_URLS list
         elif settings.IGNORED_URLS and self.is_ignored_url(request):
             return response
+
         # Do not count hits in our HTTP_USER_AGENT list such as search engines.
         elif 'HTTP_USER_AGENT' in request.META and settings.IGNORED_USER_AGENTS and self.is_ignored_ua(request):
             return response
