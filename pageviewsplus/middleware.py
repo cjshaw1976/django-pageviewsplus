@@ -1,9 +1,10 @@
 import re
 
-from django.utils import six
-from .models import HitCount
 from django.db.models import F
+
 from pageviewsplus import settings
+from .models import HitCount
+
 
 class PageViewsPlusMiddleware(object):
 
@@ -36,7 +37,6 @@ class PageViewsPlusMiddleware(object):
             hit.save()
             return response
 
-
     def is_ignored_url(self, request, url_pattern=''):
 
         # Although less readable the following list comprehension is probably faster than separate loop lines.
@@ -50,10 +50,9 @@ class PageViewsPlusMiddleware(object):
         ## return False
 
         return any(request.META['PATH_INFO'].startswith(ignored_url)
-            for ignored_url in settings.IGNORED_URLS)
-
+                   for ignored_url in settings.IGNORED_URLS)
 
     def is_ignored_ua(self, request, ua_pattern=''):
 
-        return any(re.search(ua_pattern, request.META['HTTP_USER_AGENT']) 
-                for ua_pattern in settings.IGNORED_USER_AGENTS)
+        return any(re.search(ua_pattern, request.META['HTTP_USER_AGENT'])
+                   for ua_pattern in settings.IGNORED_USER_AGENTS)
