@@ -4,7 +4,9 @@ Pageviews is a very simple middleware based page view counter. It's sole purpose
 
 PageviewsPlus adds the ability to ignore a list of urls and user agents such as search engine bots.  A default list is included for both.
 
+Now added a table to record more information on the visitors.
 
+Now required: https://pypi.python.org/pypi/user-agents/
 
 
 Quickstart
@@ -12,7 +14,8 @@ Quickstart
 
 1. Install from github or clone the repository:
 ```bash
-    pip install git+git://github.com/shadowym/django-pageviewsplus.git
+    pip install user-agents
+    pip install git+git://github.com/cjshaw1976/django-pageviewsplus.git
 ```
 
 2. Add 'pageviewsplus' to INSTALLED_APPS.

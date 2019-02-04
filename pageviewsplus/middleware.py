@@ -1,14 +1,23 @@
+import datetime
 import re
 
+from user_agents import parse
 from django.db.models import F
+from django.utils.timezone import make_aware
 
 from pageviewsplus import settings
-from .models import HitCount
-
+from .models import HitCount, AllRecords
 
 class PageViewsPlusMiddleware(object):
+    def __init__(self, get_response):
+        self.get_response = get_response
+        # One-time configuration and initialization.
 
-    def process_response(self, request, response):
+    def __call__(self, request):
+        # Code to be executed for each request before
+        # the view (and later middleware) are called.
+
+        response = self.get_response(request)
 
         """
         Do not count 500 error unexpected condition hits.
@@ -26,16 +35,30 @@ class PageViewsPlusMiddleware(object):
         # Do not count hits in our IGNORED_URLS list
         elif settings.IGNORED_URLS and self.is_ignored_url(request):
             return response
- 
+
+        # Record All hits for statical purpose
+        date_start = datetime.datetime.now() - datetime.timedelta(hours=1)
+        date_aware = make_aware(date_start)
+        remote_ip = request.META.get('HTTP_X_FORWARDED_FOR')or request.META.get('REMOTE_ADDR')
+        user_agent = parse(request.META['HTTP_USER_AGENT'])
+        url=request.path
+
+        record, record_created = AllRecords.objects.get_or_create(
+            ip=remote_ip, url=url, browser=user_agent.browser,
+            os=user_agent.os, device=user_agent.device, created__gte=date_aware)
+        record.count = F('count') + 1
+        record.save()
+
         # Do not count hits in our HTTP_USER_AGENT list such as search engines.
-        elif 'HTTP_USER_AGENT' in request.META and settings.IGNORED_USER_AGENTS and self.is_ignored_ua(request):
+        if 'HTTP_USER_AGENT' in request.META and settings.IGNORED_USER_AGENTS and self.is_ignored_ua(request):
             return response
 
-        else:
-            hit, hit_created = HitCount.objects.get_or_create(url=request.path)
-            hit.hits = F('hits') + 1
-            hit.save()
-            return response
+        hit, hit_created = HitCount.objects.get_or_create(url=request.path)
+        hit.hits = F('hits') + 1
+        hit.save()
+
+        return response
+
 
     def is_ignored_url(self, request, url_pattern=''):
 
@@ -51,6 +74,7 @@ class PageViewsPlusMiddleware(object):
 
         return any(request.META['PATH_INFO'].startswith(ignored_url)
                    for ignored_url in settings.IGNORED_URLS)
+
 
     def is_ignored_ua(self, request, ua_pattern=''):
 
